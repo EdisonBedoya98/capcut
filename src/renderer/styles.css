@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* Timeline clip styles */
+.clip-handle { cursor: col-resize; opacity: 0; transition: opacity 0.15s; }
+.clip:hover .clip-handle { opacity: 1; }
+.clip.selected { outline: 2px solid #00d1b2; outline-offset: -1px; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.2s ease-out; }
+
+/* Input fields */
+.input-field {
+  width: 100%; padding: 4px 8px; background: #1a1a1a; border: 1px solid #333;
+  border-radius: 4px; color: #e8e8e8; font-size: 11px; outline: none; transition: border-color 0.15s;
+}
+.input-field:focus { border-color: #00d1b2; }
+.input-field:hover:not(:focus) { border-color: #444; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { opacity: 0.5; }
+
+/* Range input */
+input[type="range"] { -webkit-appearance: none; height: 3px; background: #333; border-radius: 2px; outline: none; }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 10px; height: 10px; border-radius: 50%; background: #00d1b2; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb:hover { background: #00e6c5; }
+
+select option { background: #1a1a1a; color: #e8e8e8; }
